@@ -21,10 +21,14 @@ OPEN_METEO_URL = "https://archive-api.open-meteo.com/v1/archive"
 # ---------- Styling ----------
 st.markdown("""
 <style>
+    /* Full dark theme background across the entire page */
     .stApp {
-        background: linear-gradient(180deg, #071A2B 0%, #0B2538 34%, #F4F8FB 34%, #F4F8FB 100%);
+        background: linear-gradient(180deg, #071A2B 0%, #0B2538 100%) !important;
+        color: #FFFFFF !important;
     }
     .block-container { padding-top: 1.5rem; max-width: 1250px; }
+    
+    /* Hero Banner */
     .hero {
         padding: 28px 30px;
         border-radius: 22px;
@@ -33,19 +37,36 @@ st.markdown("""
         margin-bottom: 22px;
         box-shadow: 0 12px 35px rgba(0,0,0,.18);
     }
-    .hero h1 { margin: 0; font-size: 2.5rem; }
-    .hero p { margin: 8px 0 0; color: #D9F4FF; font-size: 1.05rem; }
+    .hero h1 { margin: 0; font-size: 2.5rem; color: #FFFFFF !important; }
+    .hero p { margin: 8px 0 0; color: #D9F4FF !important; font-size: 1.05rem; }
+    
+    /* Dark-mode compatible metric cards */
     .metric-card {
-        background: white; border-radius: 16px; padding: 18px;
-        border: 1px solid #DDE8EF; box-shadow: 0 5px 18px rgba(0,0,0,.06);
+        background: #0E2A40; 
+        border-radius: 16px; 
+        padding: 18px;
+        border: 1px solid #1E425E; 
+        box-shadow: 0 5px 18px rgba(0,0,0,.2);
+        color: #FFFFFF !important;
     }
-    .small-label { color:#607586; font-size:.82rem; text-transform:uppercase; letter-spacing:.06em; }
-    .risk-high { color:#B42318; font-weight:800; }
-    .risk-medium { color:#B54708; font-weight:800; }
-    .risk-low { color:#027A48; font-weight:800; }
-    .section-title { color:#123C69; margin-top: 20px; }
-    [data-testid="stSidebar"] { background: #092235; }
-    [data-testid="stSidebar"] * { color: #EAF6FF; }
+    .metric-card h2, .metric-card h3, .metric-card p {
+        color: #FFFFFF !important;
+    }
+    .small-label { color: #8DA4B5; font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; }
+    
+    /* Risk Levels */
+    .risk-high { color: #FF6B6B; font-weight: 800; }
+    .risk-medium { color: #FFB703; font-weight: 800; }
+    .risk-low { color: #38EF7D; font-weight: 800; }
+    
+    /* Section Titles & Global Text Fixes */
+    .section-title, h1, h2, h3, h4, h5, h6, p, label, span { 
+        color: #EAF6FF !important; 
+    }
+    
+    /* Sidebar Styling */
+    [data-testid="stSidebar"] { background: #051320; }
+    [data-testid="stSidebar"] * { color: #EAF6FF !important; }
 </style>
 """, unsafe_allow_html=True)
 
